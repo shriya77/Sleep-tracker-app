@@ -14,6 +14,12 @@ struct ContentView: View {
     var inputUnitAfterConversionToOutput: String {
         
         var output = ""
+        var input = Measurement(value: 0, unit: UnitLength.meters)
+        
+        
+        switch inputUnits {
+        case 
+        }
         
     }
     
