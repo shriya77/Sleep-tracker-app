@@ -46,7 +46,31 @@ struct ContentView: View {
     }
     
     var body: some View {
-        Text("Hello, World!").padding()
+        NavigationView {
+            Form {
+                Section(header:Text("Enter Input value here"))
+            }
+            
+            Section(header:Text("INPUT VALUE")) {
+                Picker("Input Unit - ",selection:$inputUnitValue) {
+                    ForEach(0..<inputUnits.count) {
+                        Text("\(inputUnits[$0])")
+                    }
+                }.pickerStyle(SegmentedPickerStyle())
+            }
+            
+            Section(header:Text("OUTPUT VALUE")) {
+                Picker("Output Unit - ",selection:$outputUnitValue) {
+                    ForEach(0..<outputUnits.count) {
+                        Text("\(outputUnits[$0])")
+                    }
+                }.pickerStyle(SegmentedPickerStyle())
+            }
+            
+            Section(header:Text("Check Output value here"))
+        }
+        Text(inputUnitAfterConversionToOutput)
+        }
     }
 }
 
